@@ -1,0 +1,9 @@
+<resources>
+    <color name="black_overlay">#66000000</color>
+    <color name="CustomGreen">#67AB73</color>
+    <color name="CustomRed">#9E3043</color>
+    <color name="CustomGrey">#cccccc</color>
+    <color name="CustomDarkGrey">#666666</color>
+    <color name="CustomBlack">#000</color>
+    <color name="CustomWhite">#fff</color>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Usebin Cuban Trainer 5000</string>
+
+    <string name="res000_repeticiones">Repeticiones</string>
+    <string name="res001_ejercicio">Aberronche</string>
+    <string name="res002_descanso">Descanso</string>
+    <string name="res003_comienzo">Comenzar</string>
+    <string name="res004_pausa">Stop</string>
+    <string name="res005_Hecho">Listo</string>
+    <string name="res006_Cancel">Cancelando</string>
+    <string name="res007_Min">Minutos</string>
+    <string name="res008_Seg">Segundos</string>
+    <string name="res009_Vol">Volumen</string>
+</resources>
