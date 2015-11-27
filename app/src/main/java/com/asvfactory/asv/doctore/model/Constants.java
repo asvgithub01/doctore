@@ -11,6 +11,6 @@ public class Constants {
 
     public static enum E_EFFORT {ONE, TWO, THREE}
 
-    ;
+    //cucu pajarita
 
 }
