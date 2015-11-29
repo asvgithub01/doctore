@@ -1,6 +1,5 @@
-package com.asvfactory.asv.doctore;
+package com.asvfactory.asv.doctore.views;
 
-import android.app.Activity;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -16,6 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.asvfactory.asv.doctore.customViews.CircularSeekBar;
+import com.asvfactory.asv.doctore.R;
+import com.asvfactory.asv.doctore.base.FullScreenActivity;
 import com.asvfactory.asv.doctore.util.SystemUiHider;
 
 import java.util.HashMap;
@@ -28,7 +30,8 @@ import java.util.Vector;
  *
  * @see SystemUiHider
  */
-public class BlackBoard extends Activity {
+public class BlackBoard extends FullScreenActivity {
+
     //region progreessBar
     private ProgressBar progressBar;
     private int progressStatus = 0;
@@ -68,9 +71,8 @@ public class BlackBoard extends Activity {
 
     boolean isTime4Aberronche = true;
     boolean isFinalSerie = false;
+
     //endregion
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,15 +102,14 @@ public class BlackBoard extends Activity {
         LayoutPB = (FrameLayout) findViewById(R.id.PanelPB);
 
 
-
-
         final View.OnClickListener textClick = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                LayoutSB.setVisibility(View.VISIBLE);
+                //set txtAux para el onchange del circular
                 txtAux = (TextView) view;
-
+                //config View Circular
+                LayoutSB.setVisibility(View.VISIBLE);
                 lblSB.setText(txtAux.getTag().toString());
                 sbAberroncher.setMax(20);
                 sbAberroncher.setProgress(getIntFromString(txtAux));
@@ -128,7 +129,10 @@ public class BlackBoard extends Activity {
             @Override
             public void onClick(View view) {
                 txtAux = (TextView) view;
+
                 lblSB.setText(txtAux.getTag().toString());
+
+
                 LayoutSB.setVisibility(View.VISIBLE);
                 txtAux = (TextView) view;
                 sbAberroncher.setMax(100);
@@ -335,7 +339,7 @@ public class BlackBoard extends Activity {
 
                 if (CurrRepe + 1 == MaxRepe) {
                     //txtRepTime.setText("0");
-                   // isThreadCanceled = true;
+                    // isThreadCanceled = true;
                     handler.post(runnableReset);
                 } else {
 
@@ -435,7 +439,8 @@ public class BlackBoard extends Activity {
         }, duration);
 
     }
-//
+
+    //
     private int getIndexSoundToDo() {
 
         if (isTime4Aberronche)

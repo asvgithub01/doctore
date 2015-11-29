@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Usebin Cuban Trainer 5000</string>
+    <string name="app_name">Doctore</string>
 
     <string name="res000_repeticiones">Repeticiones</string>
-    <string name="res001_ejercicio">Aberronche</string>
+    <string name="res001_ejercicio">Ejercicio</string>
     <string name="res002_descanso">Descanso</string>
     <string name="res003_comienzo">Comenzar</string>
     <string name="res004_pausa">Stop</string>

@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/FullscreenTheme" >
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"  >
         <activity
-            android:name=".BlackBoard"
+            android:name=".views.BlackBoard"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

@@ -5,7 +5,14 @@ import java.util.Date;
 
 /**
  * Created by Alberto on 27/11/2015.
- */ //para guardar cuantas veces y que ejercicio se ha realizado
+ * asv falta:
+ * trasladar todo lo q son metodos al ViewModel
+ * generar getter/setter exercise Order
+ * generar constructor
+ * hacer q sea @Bindable, o no y simplemente oneway
+ */
+
+//para guardar cuantas veces y que ejercicio se ha realizado
 // tb se guarda el ejercicio realizado real(en el momento en el que se cumplen las repeticiones realizadas)
 //se guarda el id del exercise base y tb se guarda el exercise si difiere en algo del base
 // cuando se ha realizado el Training

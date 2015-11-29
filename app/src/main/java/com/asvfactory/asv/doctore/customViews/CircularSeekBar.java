@@ -1,4 +1,4 @@
-package com.asvfactory.asv.doctore;
+package com.asvfactory.asv.doctore.customViews;
 
 /*
 *
@@ -43,6 +43,8 @@ package com.asvfactory.asv.doctore;
         import android.util.AttributeSet;
         import android.view.MotionEvent;
         import android.view.View;
+
+        import com.asvfactory.asv.doctore.R;
 
 public class CircularSeekBar extends View {
 

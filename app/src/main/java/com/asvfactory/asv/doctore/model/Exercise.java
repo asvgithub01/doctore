@@ -4,14 +4,21 @@ import java.io.Serializable;
 
 /**
  * Created by Alberto on 27/11/2015.
+ * asv falta:
+ * trasladar todo lo q son metodos al ViewModel
+ * generar getter/setter exercise Order
+ * generar constructor
+ * hacer q sea @Bindable, o no y simplemente oneway
+ *
  */
 public class Exercise implements Serializable {
     String exerciseName;//flexiones
     String exerciseDescription;//con las manos mirando hacia adentro flexionar los coodos
-    String exerciseID;//flexiones
+    String exerciseID;//flexionestimestamp
     int defaultSecondsExercise;//60sg //estos datos se guardan cuando se crea la tabla de ejercicios, xo no en la pantalla de training, si se modifica a posteriori se guardaría en el stats
     int defaultSecondsRelax;//60sg
     int defaultRepetitions;//3times
+    int exerciseOrder;
 
     //region getter/setter
     public String getExerciseName() {
@@ -75,7 +82,7 @@ public class Exercise implements Serializable {
         return ((this.defaultSecondsExercise + this.defaultSecondsRelax) * this.defaultRepetitions) / (this.defaultSecondsRelax * this.defaultRepetitions);
     }
 
-    //custom 1
+    //custom 1, de momento el q mas convence
     public long effortExercise3() {
         return ((this.defaultSecondsExercise * 2) / this.defaultSecondsRelax) + (this.defaultRepetitions / Constants.MAX_REPETITIONS);
     }

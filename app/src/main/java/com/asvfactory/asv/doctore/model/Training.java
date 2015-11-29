@@ -5,6 +5,12 @@ import java.util.List;
 
 /**
  * Created by Alberto on 27/11/2015.
+ *
+ *  asv falta:
+ * trasladar todo lo q son metodos al ViewModel
+ * generar getter/setter trainingOrder
+ * generar constructor
+ * hacer q sea @Bindable, o no y simplemente oneway
  */ //entrenamiento concreto, por ejemplo "fortalecer Falanges" contiene la funcion que llama al isolated
 //con su propio
 public class Training implements Serializable {
@@ -12,6 +18,9 @@ public class Training implements Serializable {
     String trainingID;//Nombre del file flexiones+timestamp
     List<Exercise> trainingExercises;
     List<TrainingStats> trainingStats;
+    int trainingOrder;
+    String trainingDescription;
+
 
     //region getter/setter
     public String getTrainingName() {
