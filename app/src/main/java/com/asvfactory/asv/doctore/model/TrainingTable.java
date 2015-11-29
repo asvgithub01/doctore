@@ -34,28 +34,6 @@ public class TrainingTable implements Serializable {
     }
 
     //endregion
-    //region methods
-    public void addItem(Training item) {
-        if (trainings == null)
-            trainings = new ArrayList<>();
 
-        trainings.add(item);
-        item.save();
-        this.save();
-
-    }
-
-    public void deleteItem(Training trainingItem) {
-
-        for (Exercise item : trainingItem.trainingExercises) {
-            trainingItem.deleteItem(item.exerciseID);
-        }
-        this.trainings.remove(trainingItem);
-    }
-
-    private void save() {
-        FileHelper.writeDoctoreFile(this,Constants.FILE_ALL_TRAININGS);
-    }
-    //endregion
 }
 

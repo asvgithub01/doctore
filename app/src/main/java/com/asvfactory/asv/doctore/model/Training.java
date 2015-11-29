@@ -8,7 +8,7 @@ import java.util.List;
  *
  *  asv falta:
  * trasladar todo lo q son metodos al ViewModel
- * generar getter/setter trainingOrder
+ * generar getter/setter trainingOrder, training description
  * generar constructor
  * hacer q sea @Bindable, o no y simplemente oneway
  */ //entrenamiento concreto, por ejemplo "fortalecer Falanges" contiene la funcion que llama al isolated
@@ -56,37 +56,5 @@ public class Training implements Serializable {
     }
 
     //endregion
-    //region Methods
-    public void save() {
 
-    }
-
-    public void load() {
-
-    }
-
-    public void addExerciseItem(Exercise exercise) {
-
-    }
-
-    public void addStatsItem(TrainingStats trainingStats) {
-
-    }
-
-    public void deleteItem(String ExerciseID) {
-        //borrar de trainingExercises
-        //y de trainingStats
-    }
-
-    //
-    public double totalTrainingEffort(Constants.E_EFFORT effortEnum) {
-        double totalReturn = 0;
-        for (Exercise item : this.trainingExercises) {
-            totalReturn += item.effortExercise3();
-        }
-
-        return totalReturn;
-    }
-
-    //endregion
 }

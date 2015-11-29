@@ -71,20 +71,5 @@ public class Exercise implements Serializable {
 
     //endregion
 
-    //region methods
-    //tiempo de ejercicio neto*repeticiones
-    public long effortExercise1() {
-        return (this.defaultSecondsExercise - this.defaultSecondsRelax) * this.defaultRepetitions;
-    }
 
-    //tiempo total / tiempo total relax
-    public long effortExercise2() {
-        return ((this.defaultSecondsExercise + this.defaultSecondsRelax) * this.defaultRepetitions) / (this.defaultSecondsRelax * this.defaultRepetitions);
-    }
-
-    //custom 1, de momento el q mas convence
-    public long effortExercise3() {
-        return ((this.defaultSecondsExercise * 2) / this.defaultSecondsRelax) + (this.defaultRepetitions / Constants.MAX_REPETITIONS);
-    }
-    //endregion
 }
