@@ -29,7 +29,7 @@ public class TrainingTable implements Serializable {
         return trainings;
     }
 
-    public void setTrainings(List<Training> trainings) {
+    public void setTrainings(ArrayList<Training> trainings) {
         this.trainings = trainings;
     }
 

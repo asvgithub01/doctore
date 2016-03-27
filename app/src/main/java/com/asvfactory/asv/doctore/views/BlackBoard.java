@@ -32,7 +32,7 @@ import java.util.Vector;
  */
 public class BlackBoard extends FullScreenActivity {
 
-    //region progreessBar
+    //region progreessBar/controles/variables
     private ProgressBar progressBar;
     private int progressStatus = 0;
     private TextView txtProgressBar;
@@ -78,7 +78,7 @@ public class BlackBoard extends FullScreenActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_black_board);
-
+        //region catchControls
         progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         txtProgressBar = (TextView) findViewById(R.id.textView1);
 
@@ -101,6 +101,35 @@ public class BlackBoard extends FullScreenActivity {
 
         LayoutPB = (FrameLayout) findViewById(R.id.PanelPB);
 
+        //endregion
+        //region Clicks controls
+        btnBegin.setOnClickListener(new View.OnClickListener()
+
+                                    {
+                                        @Override
+                                        public void onClick(View view) {
+
+                                            if (hiloDoctore != null && hiloDoctore.isAlive()) {
+//                                                hiloDoctore.interrupt();
+//                                                hiloDoctore = null;
+                                                isThreadCanceled = true;
+                                                // handler.post(runnableReset);
+                                                Button btn = (Button) view;
+                                                btn.setText("Cancelando");
+                                                btn.setEnabled(false);
+                                            } else {
+                                                btnBegin.setText(getResources().getString(R.string.res004_pausa));
+                                                LayoutPB.setBackgroundColor(getResources().getColor(R.color.CustomGreen));
+                                                isThreadCanceled = false;
+
+                                                hiloDoctore = new Thread(runnableDocLoop);
+                                                hiloDoctore.start();
+                                            }
+                                        }
+
+                                    }
+
+        );
 
         final View.OnClickListener textClick = new View.OnClickListener() {
             @Override
@@ -178,7 +207,8 @@ public class BlackBoard extends FullScreenActivity {
 
             }
         });
-
+//endregion
+        //region circularseekBar
         sbAberroncher.setOnSeekBarChangeListener(new CircularSeekBar.OnCircularSeekBarChangeListener() {
             @Override
             public void onProgressChanged(CircularSeekBar circularSeekBar, int i, boolean fromUser) {
@@ -201,7 +231,9 @@ public class BlackBoard extends FullScreenActivity {
 
             }
         });
+        //endregion
         initSounds();
+        //region runnables para cambiar timers/hacer el playSound
         runnableDocLoop = new Runnable() {
             public void run() {
                 if (!hiloDoctore.isInterrupted()) {
@@ -351,34 +383,8 @@ public class BlackBoard extends FullScreenActivity {
             }
         };
 
+//endregion
 
-        btnBegin.setOnClickListener(new View.OnClickListener()
-
-                                    {
-                                        @Override
-                                        public void onClick(View view) {
-
-                                            if (hiloDoctore != null && hiloDoctore.isAlive()) {
-//                                                hiloDoctore.interrupt();
-//                                                hiloDoctore = null;
-                                                isThreadCanceled = true;
-                                                // handler.post(runnableReset);
-                                                Button btn = (Button) view;
-                                                btn.setText("Cancelando");
-                                                btn.setEnabled(false);
-                                            } else {
-                                                btnBegin.setText(getResources().getString(R.string.res004_pausa));
-                                                LayoutPB.setBackgroundColor(getResources().getColor(R.color.CustomGreen));
-                                                isThreadCanceled = false;
-
-                                                hiloDoctore = new Thread(runnableDocLoop);
-                                                hiloDoctore.start();
-                                            }
-                                        }
-
-                                    }
-
-        );
     }
 
     SoundPool mSoundPool;
@@ -440,7 +446,6 @@ public class BlackBoard extends FullScreenActivity {
 
     }
 
-    //
     private int getIndexSoundToDo() {
 
         if (isTime4Aberronche)
@@ -485,7 +490,6 @@ public class BlackBoard extends FullScreenActivity {
         return getIntFromString(txtRepeTotTime);
     }
 
-
     @Override
     public void onBackPressed() {
         if (LayoutSB.getVisibility() == View.VISIBLE)
@@ -493,7 +497,6 @@ public class BlackBoard extends FullScreenActivity {
         else
             moveTaskToBack(true);
     }
-
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);

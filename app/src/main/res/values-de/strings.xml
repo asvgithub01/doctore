@@ -11,9 +11,4 @@
     <string name="res007_Min">Minutos</string>
     <string name="res008_Seg">Segundos</string>
     <string name="res009_Vol">Volumen</string>
-
-    <string name="title_activity_trainning">TrainningActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
-

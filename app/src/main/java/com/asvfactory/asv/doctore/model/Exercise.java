@@ -9,16 +9,20 @@ import java.io.Serializable;
  * generar getter/setter exercise Order
  * generar constructor
  * hacer q sea @Bindable, o no y simplemente oneway
- *
  */
 public class Exercise implements Serializable {
     String exerciseName;//flexiones
     String exerciseDescription;//con las manos mirando hacia adentro flexionar los coodos
-    String exerciseID;//flexionestimestamp
+    String exerciseID;//flexionestimestamp hash
+    int exerciseOrder;//lo alimenta el orden del training
+
+    Constants.E_EXERCISE_TYPE exerciseType;//este campo resultado de un switch, determina si rellenar las repeticiones
+    //E_EXERCISE_TYPE-->TIME
     int defaultSecondsExercise;//60sg //estos datos se guardan cuando se crea la tabla de ejercicios, xo no en la pantalla de training, si se modifica a posteriori se guardaría en el stats
     int defaultSecondsRelax;//60sg
+    //E_EXERCISE_TYPE-->REPETITIONS
     int defaultRepetitions;//3times
-    int exerciseOrder;
+    int defaultNumSeries;//2 series de x repeticiones
 
     //region getter/setter
     public String getExerciseName() {

@@ -1,0 +1,7 @@
+Dos recyclerview con holdertouchable
+Recycler Trainings
+Opciones:borrar,compartir, ver stats, Editar Training, Editar Ejercicios
+
+
+recycler Exercise:
+opciones: Editar, borrar, subir, bajar Borrar, Copiar(para copiar el mismo ejercicio a otro Training)
